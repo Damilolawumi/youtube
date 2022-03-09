@@ -26,6 +26,14 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
   padding: 0 16px 0px 16px;
 
+  @media  screen and (max-width: 768px) and (min-width: 470px){
+    display: none;
+  }
+
+  @media screen and (max-width: 469px){
+    display: none;
+  }
+
   p .margin {
     width: 25px;
     margin-right: 15px;
@@ -38,6 +46,10 @@ const HeaderContainer = styled.div`
   }
 
   div {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .search-input {
       width: 363px;
       height: 34px;
@@ -51,7 +63,7 @@ const HeaderContainer = styled.div`
     }
 
     .search-btn {
-      height: 39px;
+      height: 34px;
       width: 64px;
       background: #F8F8F8;
       border: 1px solid #d3d3d3;

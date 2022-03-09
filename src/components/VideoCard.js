@@ -25,8 +25,8 @@ export const VideoCard = ({data}) => {
             </div>
 
             <div className="add-on-div">
-                <p className="add-on"><i className="fa-solid fa-clock margin"></i>WATCH LATER</p>
-                <p className="add-on"><i className="fa-solid fa-layer-group margin"></i>ADD TO QUEUE</p>
+                <p className="add-on"><i className="fa-solid fa-clock"></i>WATCH LATER</p>
+                <p className="add-on"><i className="fa-solid fa-layer-group"></i>ADD TO QUEUE</p>
             </div>
         </CardContainer>
     )
@@ -34,10 +34,22 @@ export const VideoCard = ({data}) => {
 
 const CardContainer = styled.div`
   //max-width: 265px;
-  margin: 10px 10px 5px 10px;
-  background-color: white;
+  padding: 10px 10px 5px 10px;
+  background: #F9F9F9;
   transition: all 200ms ease-in;
   transform: scale(1);
+  width: 25%;
+  @media screen and (max-width: 1216px) and (min-width: 769px) {
+    width: 33.33%;
+  }
+  
+  @media screen and (max-width: 768px) and (min-width: 470px) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 469px) {
+    width: 100%
+  }
 
   .add-on-div {
     display: none;
@@ -49,7 +61,8 @@ const CardContainer = styled.div`
     z-index: 10;
 
     .add-on-div {
-      display: block;
+      display: flex;
+      justify-content: space-between;
     }
 
     .mini-container .smallImg {
@@ -63,9 +76,10 @@ const CardContainer = styled.div`
 
   .mini-container {
     display: flex;
-    justify-content: space-between;
+    //justify-content: space-between;
     text-align: left;
     margin-top: 8px;
+    justify-content: start;
 
     .smallImg {
       width: 48px;
@@ -85,12 +99,12 @@ const CardContainer = styled.div`
         text-overflow: ellipsis;
         overflow: hidden;
         /* white-space: nowrap; */
-        width: 216px;
+        max-width: 240px;
         /* max-width: 200px; */
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         display: -webkit-box;
-        max-width: 200px;
+        //max-width: 200px;
       }
 
       .title-p2 {
@@ -127,19 +141,28 @@ const CardContainer = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 265px;
+      flex: 1;
       height: 40px;
       background: #EEEEEE;
-      margin: 8px;
       color: #7A7A7A;
       border-radius: 3px;
       cursor: pointer;
       font-size: 13px;
       font-weight: 500;
+      margin: auto;
+      margin-bottom: 8px;
+
+      &:first-child {
+        margin-right: 10px;
+      }
 
       :hover {
         background: rgba(238, 238, 238, 0.63);
         color: #706f6f;
+      }
+
+      i {
+        margin-right: 10px;
       }
     }
   }

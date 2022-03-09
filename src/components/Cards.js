@@ -34,7 +34,7 @@ export const Cards = () => {
 
 
     return (
-        <CardDetails className="card-details">
+        <CardsWrapper>
             <div className="tags-container">
                 <p className="tag">All</p>
                 <p className="tag">Deep House</p>
@@ -59,14 +59,14 @@ export const Cards = () => {
                 {error && <p>Error!</p>}
                 <div ref={loaderRef} className="more-content-style"/>
             </div>
-        </CardDetails>
+        </CardsWrapper>
 
     )
 
 }
 
-const CardDetails = styled.div`
-  width: 80%;
+const CardsWrapper = styled.div`
+  flex:1;
   padding-bottom: 50px;
 
   .tags-container {
@@ -74,35 +74,47 @@ const CardDetails = styled.div`
     flex-wrap: wrap;
     width: 100%;
     margin: auto;
-    justify-content: space-around;
     margin-top: 10px;
     border-top: 1px solid #D2D2D2;
     border-bottom: 1px solid #D2D2D2;
     padding: 8px 0px 8px 0px;
+
+    @media screen and (max-width: 1210px) and (min-width: 769px) {
+      display: none;
+    }
+
+    @media  screen and (max-width: 768px) and (min-width: 470px){
+      display: none;
+    }
+
+    @media screen and (max-width: 469px){
+      display: none;
+    }
 
     .tag {
       font-family: 'Roboto', sans-serif;
       font-size: 14px;
       margin: 0px 5px 0px 5px;
       color: black;
-      background: #E5E5E5;
+      background: #EFF2F2;
       border: 1px solid #D2D2D2;
-      border-radius: 12px;
+      border-radius: 16px;
       cursor: pointer;
       padding: 10px;
+
+      
     }
 
     .tag:hover {
       color: black;
-      background: #F2F2F2;
+      background: #E5E5E5;
     }
   }
   .cards {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
     margin: auto;
-    margin-top: 4px;
+    //margin-top: 4px;
     background: #F9F9F9;
     //flex: 1;
     padding:16px;

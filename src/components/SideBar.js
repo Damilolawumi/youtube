@@ -22,7 +22,15 @@ export const SideBar = () => {
 }
 
 const SidebarContainer = styled.div`
-  width: 20%;
+  width: 240px;
+
+  @media  screen and (max-width: 768px) and (min-width: 470px){
+    display: none;
+  }
+
+  @media screen and (max-width: 469px){
+    display: none;
+  }
 
   p {
     max-width: 192px;
@@ -42,7 +50,7 @@ const SidebarContainer = styled.div`
     .margin {
       width: 25px;
       margin-right: 15px;
-    } 
+    }
   }
 
 
