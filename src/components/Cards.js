@@ -1,19 +1,17 @@
 import {useEffect, useState, useCallback, useRef} from "react";
-import axios from "axios";
-import {APIurl} from "../App";
 import {VideoCard} from "./VideoCard";
-import {Header} from "./Header";
 import useFetch from "../hooks/useFetch";
+import styled from "styled-components"
 
 export const Cards = () => {
     const [query, setQuery] = useState("");
     const [page, setPage] = useState(undefined);
-    const { loading, error, list:youtubeData, nextPageToken } = useFetch(query, page);
+    const {loading, error, list: youtubeData, nextPageToken} = useFetch(query, page);
     const loaderRef = useRef(null);
 
 
     const callbackFunction = (entries) => {
-        const [ entry ] = entries
+        const [entry] = entries
         if (entry.isIntersecting) {
             setPage((prev) => nextPageToken);
         }
@@ -22,7 +20,7 @@ export const Cards = () => {
     const options = {
         root: null,
         rootMargin: "0px",
-        threshold:1.0
+        threshold: 1.0
     }
     useEffect(() => {
 
@@ -30,13 +28,13 @@ export const Cards = () => {
         if (loaderRef.current) observer.observe(loaderRef.current)
 
         return () => {
-            if(loaderRef.current) observer.unobserve(loaderRef.current)
+            if (loaderRef.current) observer.unobserve(loaderRef.current)
         }
     }, [loaderRef, options])
 
 
     return (
-        <div className="card-details">
+        <CardDetails className="card-details">
             <div className="tags-container">
                 <p className="tag">All</p>
                 <p className="tag">Deep House</p>
@@ -61,8 +59,60 @@ export const Cards = () => {
                 {error && <p>Error!</p>}
                 <div ref={loaderRef} className="more-content-style"/>
             </div>
-        </div>
+        </CardDetails>
 
     )
+
 }
+
+const CardDetails = styled.div`
+  width: 80%;
+  padding-bottom: 50px;
+
+  .tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+    justify-content: space-around;
+    margin-top: 10px;
+    border-top: 1px solid #D2D2D2;
+    border-bottom: 1px solid #D2D2D2;
+    padding: 8px 0px 8px 0px;
+
+    .tag {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      margin: 0px 5px 0px 5px;
+      color: black;
+      background: #E5E5E5;
+      border: 1px solid #D2D2D2;
+      border-radius: 12px;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .tag:hover {
+      color: black;
+      background: #F2F2F2;
+    }
+  }
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+    margin-top: 4px;
+    background: #F9F9F9;
+    //flex: 1;
+    padding:16px;
+
+    .more-content-style{
+      margin-bottom:40px;
+    }
+  }
+`;
+
+
+
 

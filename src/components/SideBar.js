@@ -1,8 +1,9 @@
 import React from 'react';
+import styled from "styled-components";
 
 export const SideBar = () => {
     return (
-        <div className="side-bar-container">
+        <SidebarContainer className="side-bar-container">
             <p className="side-bar-p"><i className="fa-solid fa-house margin"></i> Home</p>
             <p className="side-bar-p"><i className="fa-solid fa-compass margin"></i> Explore</p>
             <p className="side-bar-p"><i className="fa-solid fa-section margin"></i> Shorts</p>
@@ -16,6 +17,36 @@ export const SideBar = () => {
             <p className="side-bar-p"><i className="fa-solid fa-clock margin"></i> Watch Later</p>
             <p className="side-bar-p"><i className="fa-solid fa-circle-arrow-down margin"></i> Downloads</p>
             <p className="side-bar-p"><i className="fa-solid fa-thumbs-up margin"></i> Liked videos</p>
-        </div>
+        </SidebarContainer>
     )
 }
+
+const SidebarContainer = styled.div`
+  width: 20%;
+
+  p {
+    max-width: 192px;
+    height: 40px;
+    color: black;
+    /*margin:5px;*/
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 24px;
+
+    :hover {
+      background: #E5E5E5;
+    }
+
+    .margin {
+      width: 25px;
+      margin-right: 15px;
+    } 
+  }
+
+
+
+
+
+`
