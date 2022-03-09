@@ -76,10 +76,10 @@ const CardContainer = styled.div`
 
   .mini-container {
     display: flex;
-    //justify-content: space-between;
     text-align: left;
     margin-top: 8px;
     justify-content: start;
+    margin-bottom: 25px;
 
     .smallImg {
       width: 48px;
@@ -98,13 +98,14 @@ const CardContainer = styled.div`
         line-height: 22px;
         text-overflow: ellipsis;
         overflow: hidden;
-        /* white-space: nowrap; */
         max-width: 240px;
-        /* max-width: 200px; */
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         display: -webkit-box;
-        //max-width: 200px;
+
+        @media screen and (max-width: 469px) {
+          max-width: 400px;
+        }
       }
 
       .title-p2 {

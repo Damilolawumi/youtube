@@ -114,9 +114,7 @@ const CardsWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     margin: auto;
-    //margin-top: 4px;
     background: #F9F9F9;
-    //flex: 1;
     padding:16px;
 
     .more-content-style{

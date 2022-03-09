@@ -75,6 +75,7 @@ const HeaderContainer = styled.div`
       line-height: 21px;
       cursor: pointer;
       border: 1px solid #b5afaf;
+      border-left: none;
       
       .space {
         margin-right: 8px;
