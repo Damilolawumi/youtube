@@ -59,7 +59,7 @@ export const Cards = () => {
                 })}
                 {loading && <p>Loading...</p>}
                 {error && <p>Error!</p>}
-                <div ref={loaderRef} style={{marginBottom:40}}/>
+                <div ref={loaderRef} className="more-content-style"/>
             </div>
         </div>
 
