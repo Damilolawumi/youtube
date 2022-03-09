@@ -80,13 +80,34 @@ table {
 }
 
 .container {
-    max-width: 240px;
+    max-width: 265px;
     margin: 10px 10px 5px 10px;
+    background-color: white;
+    transition: all 200ms ease-in;
+    transform: scale(1);
+}
+
+.container .add-on-div  {
+   display: none;
+}
+
+.container:hover{
+    transition: all 200ms ease-in;
+    /*transform: scale(1.1);*/
+    z-index: 10;
+}
+
+.container:hover .mini-container .smallImg{
+    transform: scale(1);
+}
+
+.container:hover .add-on-div  {
+    /*display: block;*/
 }
 
 .bigImg {
     width: 100%;
-    height: 201px;
+    /*height: 201px;*/
 }
 
 .cards {
@@ -117,10 +138,19 @@ table {
     color: black;
     font-weight: 500;
     line-height: 22px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    /* white-space: nowrap; */
+    width: 216px;
+    /* max-width: 200px; */
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    max-width: 200px;
 }
 
 .title-p2 {
-    margin-top: 5px;
+    margin-top: 8px;
     color: #AAAAAA;
     font-size: 14px;
 }
@@ -178,6 +208,7 @@ table {
 
 .card-details{
     width: 80%;
+    padding-bottom: 50px;
 }
 
 .tags-container {
@@ -213,7 +244,7 @@ table {
 
 .header-container{
     display: flex;
-    width: 1440px;
+    max-width: 1440px;
     align-items: center;
     margin: auto;
     margin-top: 5px;
@@ -267,4 +298,24 @@ table {
     margin-right:3px;
     color: red;
     font-size: 18px;
+}
+
+.add-on-div{
+    margin-top:17px;
+}
+
+.add-on{
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 265px;
+    height: 40px;
+    background: #EEEEEE;
+    margin:8px;
+    color:#7A7A7A;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
 }

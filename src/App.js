@@ -2,7 +2,7 @@ import './App.css';
 import {VideoCard} from "./components/VideoCard";
 import axios from "axios";
 import {useEffect, useState} from "react";
-import {CardDetails} from "./components/CardDetails";
+import {Cards} from "./components/Cards";
 import {SideBar} from "./components/SideBar";
 import {Header} from "./components/Header";
 
@@ -17,7 +17,7 @@ function App() {
             <Header/>
             <section className="App-section">
                 <SideBar/>
-                <CardDetails/>
+                <Cards/>
             </section>
 
 
