@@ -18,7 +18,6 @@ export const Header = () => {
 
 const HeaderContainer = styled.div`
   display: flex;
-  /*max-width: 1440px;*/
   align-items: center;
   margin: auto;
   margin-top: 5px;

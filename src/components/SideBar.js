@@ -12,7 +12,7 @@ export const SideBar = () => {
             <p className="side-bar-p"><i className="fa-solid fa-music margin"></i> Music</p>
 
             <p className="side-bar-p"><i className="fa-brands fa-youtube margin"></i> Library</p>
-            <p className="side-bar-p"><i className="fa-solid fa-files margin"></i> History</p>
+            <p className="side-bar-p"><i className="fa-solid fa-layer-plus margin"></i> History</p>
             <p className="side-bar-p"><i className="fa-solid fa-video margin"></i> Your videos</p>
             <p className="side-bar-p"><i className="fa-solid fa-clock margin"></i> Watch Later</p>
             <p className="side-bar-p"><i className="fa-solid fa-circle-arrow-down margin"></i> Downloads</p>
@@ -36,7 +36,6 @@ const SidebarContainer = styled.div`
     max-width: 192px;
     height: 40px;
     color: black;
-    /*margin:5px;*/
     display: flex;
     justify-content: left;
     align-items: center;

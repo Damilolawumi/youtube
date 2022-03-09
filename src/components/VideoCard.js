@@ -3,7 +3,7 @@ import moment from "moment";
 import styled from "styled-components";
 
 export const VideoCard = ({data}) => {
-    // console.log(data)
+
     return (
         <CardContainer>
             <img src={data?.snippet?.thumbnails?.medium?.url} alt="big-img"/>
@@ -19,7 +19,7 @@ export const VideoCard = ({data}) => {
                     <p className="title-p2">21k views . <span
                         className="date"> {moment(data?.snippet?.publishedAt).format('MM-DD-YYYY')}  </span></p>
                     {data?.snippet?.liveBroadcastContent !== "none" && (
-                        <p className="title-live">LIVE NOW</p>
+                        <span className="title-live">LIVE NOW</span>
                     )}
                 </div>
             </div>
@@ -125,10 +125,11 @@ const CardContainer = styled.div`
         color: red;
         border: 1px solid red;
         font-size: 13px;
-        width: 63px;
+        display: inline-block;
         padding: 4px;
         margin-top: 7px;
         font-weight: 500;
+        
       }
 
     }

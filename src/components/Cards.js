@@ -1,4 +1,4 @@
-import {useEffect, useState, useCallback, useRef} from "react";
+import {useEffect, useState, useRef} from "react";
 import {VideoCard} from "./VideoCard";
 import useFetch from "../hooks/useFetch";
 import styled from "styled-components"
@@ -8,7 +8,6 @@ export const Cards = () => {
     const [page, setPage] = useState(undefined);
     const {loading, error, list: youtubeData, nextPageToken} = useFetch(query, page);
     const loaderRef = useRef(null);
-
 
     const callbackFunction = (entries) => {
         const [entry] = entries
@@ -22,8 +21,8 @@ export const Cards = () => {
         rootMargin: "0px",
         threshold: 1.0
     }
-    useEffect(() => {
 
+    useEffect(() => {
         const observer = new IntersectionObserver(callbackFunction, options)
         if (loaderRef.current) observer.observe(loaderRef.current)
 
@@ -31,7 +30,6 @@ export const Cards = () => {
             if (loaderRef.current) observer.unobserve(loaderRef.current)
         }
     }, [loaderRef, options])
-
 
     return (
         <CardsWrapper>
@@ -60,9 +58,7 @@ export const Cards = () => {
                 <div ref={loaderRef} className="more-content-style"/>
             </div>
         </CardsWrapper>
-
     )
-
 }
 
 const CardsWrapper = styled.div`
@@ -101,8 +97,6 @@ const CardsWrapper = styled.div`
       border-radius: 16px;
       cursor: pointer;
       padding: 10px;
-
-      
     }
 
     .tag:hover {
