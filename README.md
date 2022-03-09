@@ -1,3 +1,14 @@
+### Youtube Application
+This is an application that that mimics YouTube's homepage video grid list
+
+###Libraries Used
+axios
+styled component
+moment
+
+###features
+-infinite scrollable list using youtubes api
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
